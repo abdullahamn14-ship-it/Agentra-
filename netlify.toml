@@ -1,9 +1,8 @@
+# Manual deployment - build locally and deploy the build/web folder
 [build]
-  command = "npm run build"
-  publish = ".next"
+  publish = "build/web"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[build.environment]
-  NEXT_USE_NETLIFY_EDGE = "true"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
